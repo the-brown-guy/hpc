@@ -38,8 +38,8 @@ void multiplyParallel(const vector<vector<int>> &A, const vector<vector<int>> &B
 
 int main()
 {
-    int N; // Matrix size (1000, 2000, 3000)
-    cout << "Enter matrix size (e.g., 1000, 2000, 3000): ";
+    int N; // Matrix size
+    cout << "Enter matrix size: ";
     cin >> N;
 
     // Initialize matrices A, B, and C
@@ -59,7 +59,7 @@ int main()
     multiplyParallel(A, B, C, N);
     end = omp_get_wtime();
     double durationPar = end - start;
-    cout << "Time taken for parallel multiplication (OpenMP): " << durationPar << " seconds" << endl;
+    cout << "Time taken for parallel multiplication: " << durationPar << " seconds" << endl;
     
     return 0;
 }
