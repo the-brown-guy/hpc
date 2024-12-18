@@ -7,9 +7,8 @@ using namespace std;
 int main(int argc, char **argv)
 {
     MPI_Init(&argc, &argv);
-    int world_size;
+    int world_size, world_rank;
     MPI_Comm_size(MPI_COMM_WORLD, &world_size);
-    int world_rank;
     MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);
     srand((unsigned int)time(0) + world_rank); // or, srand(static_cast<unsigned>(time(0)) + world_rank);
     int mangoes_picked = rand() % 101;
