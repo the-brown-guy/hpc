@@ -13,7 +13,7 @@ int main(int argc, char **argv)
     int n = 10;
     vector<int> local_array(n);
     int local_sum = 0, total_sum = 0;
-    srand(static_cast<unsigned>(time(0)) + world_rank);
+    srand((unsigned int)time(0) + world_rank);
 
     for (int i = 0; i < n; ++i)
     {
