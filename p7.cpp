@@ -20,12 +20,13 @@ int main(int argc, char **argv)
         local_array[i] = rand() % 100;
         local_sum += local_array[i];
     }
+    
     cout << "Process " << world_rank << " local array: ";
-
     for (int i : local_array)
     {
         cout << i << " ";
     }
+    
     cout << "\nProcess " << world_rank << " local sum: " << local_sum << endl;
 
     MPI_Reduce(&local_sum, &total_sum, 1, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
